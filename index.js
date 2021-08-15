@@ -3,7 +3,9 @@ console.clear();
 const readlineSync = require('readline-sync');
 const chalk = require('chalk');
 
-console.log(chalk.bold.green('\t\t -------- Are you an emoji person? --------  '));
+var username = readlineSync.question('Before we start with the quiz, Please enter you name: ')
+
+console.log(chalk.bold.green(`\n\t\t -------- Hii ${username} 👋, Are you an emoji person? --------  `));
 console.log(`\n\n -- ${chalk.bold.white('If Yes! then answer these 10 questions and test yourself.')} -- \n\n`);
 
 console.log(`\n\n ${chalk.red.bold('Write the name of every emoji and if the name contains two words then separate them with space.')} \n\n`);
@@ -70,4 +72,4 @@ for(let val = 0; val < questionBank.length; val++) {
   console.log('\n');
 }
 
-console.log(`\n\n${chalk.bgWhite.black.bold(`You are a ${chalk.red.bold((score*100)/10)}% emoji person.`)} \n\n`);
+console.log(`\n\n${chalk.bgWhite.black.bold(`${username}, you are a ${chalk.red.bold((score*100)/10)}% emoji person.`)} \n\n`);
